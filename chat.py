@@ -8,7 +8,8 @@ def reading():
 @app.route("/write")
 def writing():
     msg = request.args["msg"]
-    return chatwrite(msg)
+    chatwrite(msg)
+    return "I wrote a message"
 
 
 def chat():
