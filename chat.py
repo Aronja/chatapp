@@ -11,6 +11,5 @@ def chat():
     return x.read()
 
 
-
 if __name__ == "__main__":
     app.run()
