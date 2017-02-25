@@ -1,3 +1,3 @@
 # chatapp
 Chatapp
-Jon please build an app! 
+Jon please build an app! :) 
