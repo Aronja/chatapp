@@ -1,0 +1,23 @@
+<!doctype html>
+<title>Flaskr</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+  <h1>Chatapp :)</h1>
+  <h2>Welcome to Chatapp</h2>
+
+<a href="http://127.0.0.1:5000/read">read</a>
+
+<form action="/write" method=get> <!--to available methods get(get request) and post(post request); (and there are much more!!) -->
+      Your message:
+      <input type=text size=30 name=msg>
+      <input type=submit value=Send>
+  </form>
+
+  <!--The action attribute defines the location (URL) where the form's collected data should be sent when it is submitted.-->
+
+
+ <!-- <a href="http://127.0.0.1:5000/write?msg=">write</a> ? means additional information!!! Query String! This didn´t work out as planned! -->
+
+</div>
+
+<!-- JS to make a request or a form in HTML -->
