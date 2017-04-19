@@ -11,10 +11,14 @@ def layout():
 
 @app.route("/write")
 def writing():
+    name = request.args["name"]
+    chatwrite(name)
+    chatwrite(": ")
     msg = request.args["msg"]
     chatwrite(msg)
     chatwrite("\n")
     return redirect ("/")
+
 
 
 def chat():
