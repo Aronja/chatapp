@@ -5,13 +5,33 @@
   <h1>Chatapp :)</h1>
   <h2>Welcome to Chatapp</h2>
 
-<a href="http://127.0.0.1:5000/read">read</a>
+<!-- <a href="http://127.0.0.1:5000/read">read</a> -->
+
+<div class=messageboard>
+</div>
 
 <form action="/write" method=get> <!--to available methods get(get request) and post(post request); (and there are much more!!) -->
       Your message:
       <input type=text size=30 name=msg>
       <input type=submit value=Send>
+      <input type=text size=30 name=name class=Name>
   </form>
+
+<script>
+// confirm("This chatapp is AWESOME!!!")
+// confirm("Are you ready to go?")
+var a = prompt("What is your name?")
+document.querySelector(".Name").value = a
+// if (a.length > 5) {confirm("This is a long name")}
+
+fetch('/read')
+.then(function responseFunction (response) {
+  return response.text();
+})
+.then(function(response) {
+  document.querySelector(".messageboard").innerText= response
+})
+</script>
 
   <!--The action attribute defines the location (URL) where the form's collected data should be sent when it is submitted.-->
 
@@ -21,3 +41,5 @@
 </div>
 
 <!-- JS to make a request or a form in HTML -->
+
+<!--TODO make a link in the write root to the read root -->
