@@ -9,6 +9,7 @@ def reading():
 def layout():
     return render_template('layout.html')
 
+
 @app.route("/write")
 def writing():
     name = request.args["name"]
@@ -18,6 +19,7 @@ def writing():
     chatwrite(msg)
     chatwrite("\n")
     return redirect ("/")
+
 
 @app.route("/test")
 def testing():
@@ -30,23 +32,27 @@ def testing():
     # chatwrite("\n")
     # return redirect ("/")
 
+
 @app.route("/testread")
 def readingtest():
     return testread()
 
 
 def chat():
-    x = open("chat.txt","r")
+    x = open("text/chat.txt","r")
     return x.read() # this is a function that is used for files
+
 def chatwrite(msg):
-    x = open("chat.txt","a")
+    x = open("text/chat.txt","a")
     return x.write(msg)
+
 def performtesting(test):
-    y = open ("test.txt","a")
+    y = open ("text/test.txt","a")
     return y.write(test)
+
 def testread():
-    y = open ("test.txt","r")
-    return y.read()
+    y = open ("text/test.txt","r")
+    return y.read
 
 
 if __name__ == "__main__":

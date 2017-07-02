@@ -1,63 +1,25 @@
 <!doctype html>
-<title>Flaskr</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<div class=page>
-  <h1>Chatapp :)</h1>
-  <h2>Welcome to Chatapp</h2>
+<html>
+<head>
+  <title>Flaskr</title>
+  <script src="{{url_for( "static", filename="index.js" )}}"></script>
+</head>
+<body>
+  <div class=page>
+    <h1>Chatapp :)</h1>
+    <h2>Welcome to Chatapp</h2>
 
-<!-- <a href="http://127.0.0.1:5000/read">read</a> -->
+    <div class=messageboard>
+    </div>
 
-<div class=messageboard>
-</div>
+    <form action="/write" method=get>
 
-<form action="/write" method=get> <!--to available methods get(get request) and post(post request); (and there are much more!!) -->
       Your message:
       <input type=text size=30 name=msg>
       <input type=submit value=Send>
-      <input type=text size=30 name=name class=Name>
-  </form>
-
-  <form action="/test" method=post>
-        this is a test:
-        <input type=text size=30 name=test>
-        <input type=submit value=Send> -->
-        <input type=text size=30 name=name class=Name>
-  </form>
-
-
-<!-- <form action="/test" method="POST">
-    this is a test:
-    <input type="hidden" name="q" value="a">
-</form> -->
-
-
-
-
-
-<script>
-// confirm("This chatapp is AWESOME!!!")
-// confirm("Are you ready to go?")
-var a = prompt("What is your name?")
-document.querySelector(".Name").value = a
-// if (a.length > 5) {confirm("This is a long name")}
-
-fetch('/read')
-.then(function responseFunction (response) {
-  return response.text();
-})
-.then(function(response) {
-  document.querySelector(".messageboard").innerText= response
-})
-</script>
-
-  <!--The action attribute defines the location (URL) where the form's collected data should be sent when it is submitted.-->
-
-
- <!-- <a href="http://127.0.0.1:5000/write?msg=">write</a> ? means additional information!!! Query String! This didn´t work out as planned! -->
-
-</div>
-
-<!-- JS to make a request or a form in HTML -->
-
-<!-- TODO send name as a quiery string, save in local storage -->
-<!-- TODO save name, I might have to use a post request for that -->
+      <input type=text size=30 name=name class=Name> Your Colour:
+      <input type="color" value="#ff0000" class=Colour name=Colour>
+    </form>
+  </div>
+</body>
+</html>
